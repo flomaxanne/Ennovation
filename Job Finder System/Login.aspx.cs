@@ -54,7 +54,7 @@ namespace Job_Finder_System
                     Session["Role"] = Role;
                     if (dt.Rows[i]["Role"].ToString() == "Admin")
                     {
-                        Response.Redirect("Admin/Users.aspx");
+                        Response.Redirect("Users.aspx");
                     }
 
                     else if (dt.Rows[i]["Role"].ToString() == "Poster")
@@ -66,11 +66,11 @@ namespace Job_Finder_System
 
                         if (PosterDetailsExist > 0)
                         {
-                            Response.Redirect("JobPoster/JobPoster.aspx");
+                            Response.Redirect("AddAdvertisement.aspx");
                         }
                         else
                         {
-                            Response.Redirect("JobPoster/AddJobPosterDetails.aspx");
+                            Response.Redirect("AddJobPosterDetails.aspx");
                         }
 
                     }
@@ -83,11 +83,11 @@ namespace Job_Finder_System
 
                         if (SeekerDetailsExist > 0)
                         {
-                            Response.Redirect("JobSeeker/JobSeeker.aspx");
+                            Response.Redirect("JobSeeker.aspx");
                         }
                         else
                         {
-                            Response.Redirect("JobSeeker/AddJobSeekerDetails.aspx");
+                            Response.Redirect("AddJobSeekerDetails.aspx");
                         }
                     }
                 }

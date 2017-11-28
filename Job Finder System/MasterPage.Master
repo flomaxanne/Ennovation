@@ -28,16 +28,17 @@
                     <a class="navbar-brand" href="#">Job-Novation</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Home.aspx">Home</a></li>
-                    <li id="loginmenu" runat="server"><a href="/Login.aspx">Login</a></li>
+                    <li><a href="Home.aspx">Home</a></li>
+                   
                     <li id="registrationmenu" runat="server"><a href="Registration.aspx">Registration</a></li>      
-                    <li id="addadvertisement" runat="server"><a href="/AddAdvertisement.aspx">Advertisement</a></li>     
-                    <li id="editusers" runat="server"><a href="Users.aspx">Users</a></li>                               
+                    <li id="addadvertisement" runat="server"><a href="AddAdvertisement.aspx">Advertisement</a></li>     
+                    <li id="editusers" runat="server"><a href="Users.aspx">Users</a></li>                 
+                     <li id="jobsapplied" runat="server"><a href="JobsApplied.aspx">Jobs Applied</a></li>                      
                                               
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-
+                      <li id="loginmenu" runat="server"><a href="Login.aspx">Login</a></li>
                     <li id="userlogindetail" runat="server">
                     <a href="#"> 
                         <span class="glyphicon glyphicon-user"></span>
@@ -45,7 +46,7 @@
                       
                      </a>
                     </li>
-
+                   
                     
                     <li id="userlogout" runat="server">
                          <a href="#">
@@ -59,7 +60,7 @@
 					<li class="dropdown" id="userdetailmenu" runat="server">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span><b class="caret"></b></a>
 				    <ul class="dropdown-menu">
-				    <li id="changepassword" runat="server"><a href="/ChangePassword.aspx">Change Password</a></li>
+				    <li id="changepassword" runat="server"><a href="ChangePassword.aspx">Change Password</a></li>
                      <li class="divider"></li>
                     <li id="jobposter_userdetails" runat="server"><a href="JobPosterUserDetails.aspx">Change Details</a></li>
                     

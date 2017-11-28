@@ -19,7 +19,8 @@ namespace Job_Finder_System
         protected void Page_Load(object sender, EventArgs e)
         {
             GetData();
-     
+           
+
         }
 
         public void GetData()
@@ -44,21 +45,42 @@ namespace Job_Finder_System
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(strConnString);
+  
+
+            string Id = Request["Id"].ToString();
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
-            str = "select SeekerID from JobSeekerDetails where Username='" + Session["Username"] + "'";
-            com = new SqlCommand(str, con);
-            SqlDataAdapter da = new SqlDataAdapter(com);
+            SqlCommand cmd = new SqlCommand("select * from Advertisement where AdID = " + Id, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            DataTable dt = ds.Tables[0];
+          
+            string adID  = ds.Tables[0].Rows[0][0].ToString();
+            string posterUsername= Literal9.Text = ds.Tables[0].Rows[0][10].ToString();
+
+
+            using (SqlCommand command = new SqlCommand("INSERT INTO JobApplication values (@SeekerUsername, @PosterUsername, @AdID)", con))
+            {
+                command.Parameters.AddWithValue("SeekerUsername", Session["Username"].ToString());
+                command.Parameters.AddWithValue("PosterUsername", posterUsername);
+                command.Parameters.AddWithValue("AdID", adID);
+
+                command.ExecuteNonQuery();
+                lblsuccess.Visible = true;
+                lblsuccess.Text = Session["Username"].ToString() + ", Job successfully applied!";
+
+
+
+            }
+
+
+
+           
+
+
             con.Close();
 
-            string seekerId = dt.Rows[0]["SeekerID"].ToString();
-            string username = Session["Username"].ToString();
-            string posterId = dt.Rows[0]["PosterID"].ToString();
 
-            Response.Redirect("ContactPage.aspx?SeekerID="+seekerId);
 
 
    

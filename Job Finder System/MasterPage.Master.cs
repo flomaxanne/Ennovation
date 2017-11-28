@@ -22,12 +22,16 @@ namespace Job_Finder_System
                 {
                     loginmenu.Visible = false;
                     registrationmenu.Visible = false;
+                   
+                    
                 }
 
 
             if (Session["Role"] == null)
             {
                 addadvertisement.Visible = false;
+                jobsapplied.Visible = false;
+
             }
 
             else if (Session["Role"].ToString()=="Poster")
@@ -35,12 +39,14 @@ namespace Job_Finder_System
                 jobposter_userdetails.Visible = true;
                 jobseeker_userdetails.Visible = false;
                 addadvertisement.Visible = true;
+                jobsapplied.Visible = false;
             }
              else if (Session["Role"].ToString()=="Seeker")
                 {
                     jobseeker_userdetails.Visible = true;
                     jobposter_userdetails.Visible = false;
                    addadvertisement.Visible = false;
+                jobsapplied.Visible = true;
             }
 
             if (Session["Username"] != null)
@@ -61,7 +67,7 @@ namespace Job_Finder_System
         protected void btnlogout_Click(object sender, EventArgs e)
         {
             Session.RemoveAll();
-            Response.Redirect("/Home.aspx");
+            Response.Redirect("Home.aspx");
         }
     }
     }

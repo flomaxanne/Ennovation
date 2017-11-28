@@ -1,10 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddAdvertisement.aspx.cs" Inherits="Job_Finder_System.AddAdvertisement" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -15,8 +14,7 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     
-    <title></title>
-     
+    
     <style type="text/css">
         .auto-style2 {
             width: 162px;
@@ -40,6 +38,7 @@
                 });
             });
     </script>
+    <form id="form1" runat="server">
 
     <asp:ScriptManager ID="ScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 
@@ -169,6 +168,8 @@
                         <asp:Label ID="lblDatedetails" runat="server" Text='<%#Eval("DateDetails") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+              
+
                 <asp:TemplateField HeaderText="Username" ItemStyle-Width="8%">
                     <ItemTemplate>
                         <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("Username") %>'></asp:Label>
@@ -192,5 +193,6 @@
 
             <input type="hidden" runat="server" id="hidAdID" />
         </div>
+        </form>
 
 </asp:Content>

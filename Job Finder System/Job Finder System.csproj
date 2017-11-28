@@ -106,9 +106,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AdvertisementDetails.aspx" />
-    <Content Include="Admin\EditUser.aspx" />
-    <Content Include="Admin\EditUsers.aspx" />
+    <Content Include="AdvertisementDetails.aspx" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+    <Content Include="EditUsers.aspx" />
     <Content Include="AddAdvertisement.aspx" />
     <Content Include="ContactPage.aspx" />
     <Content Include="Home.aspx" />
@@ -116,11 +118,12 @@
     <Content Include="Images\LoadingImage.gif" />
     <Content Include="Images\NotAvailable.jpg" />
     <Content Include="JobApplication.aspx" />
-    <Content Include="JobPoster\AddJobPosterDetails.aspx" />
+    <Content Include="AddJobPosterDetails.aspx" />
     <Content Include="ChangePassword.aspx" />
-    <Content Include="JobPoster\JobPosterUserDetails.aspx" />
-    <Content Include="JobSeeker\AddJobSeekerDetails.aspx" />
-    <Content Include="JobSeeker\JobSeekerUserDetails.aspx" />
+    <Content Include="JobPosterUserDetails.aspx" />
+    <Content Include="AddJobSeekerDetails.aspx" />
+    <Content Include="JobsApplied.aspx" />
+    <Content Include="JobSeekerUserDetails.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -147,13 +150,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Users.aspx" />
+    <Content Include="Users.aspx" />
     <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
-    </Content>
-    <Content Include="JobPoster\JobPoster.aspx" />
-    <Content Include="JobSeeker\JobSeeker.aspx" />
+    <Content Include="JobPoster.aspx" />
+    <Content Include="JobSeeker.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -169,25 +169,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdvertisementDetails.aspx.cs">
+    <Compile Include="AdvertisementDetails.aspx.cs">
       <DependentUpon>AdvertisementDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AdvertisementDetails.aspx.designer.cs">
+    <Compile Include="AdvertisementDetails.aspx.designer.cs">
       <DependentUpon>AdvertisementDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\EditUser.aspx.cs">
-      <DependentUpon>EditUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\EditUser.aspx.designer.cs">
-      <DependentUpon>EditUser.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\EditUsers.aspx.cs">
+    <Compile Include="EditUsers.aspx.cs">
       <DependentUpon>EditUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\EditUsers.aspx.designer.cs">
+    <Compile Include="EditUsers.aspx.designer.cs">
       <DependentUpon>EditUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddAdvertisement.aspx.cs">
@@ -197,11 +190,18 @@
     <Compile Include="AddAdvertisement.aspx.designer.cs">
       <DependentUpon>AddAdvertisement.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Users.aspx.cs">
+    <Compile Include="JobsApplied.aspx.cs">
+      <DependentUpon>JobsApplied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobsApplied.aspx.designer.cs">
+      <DependentUpon>JobsApplied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Users.aspx.designer.cs">
+    <Compile Include="Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactPage.aspx.cs">
@@ -225,11 +225,11 @@
     <Compile Include="JobApplication.aspx.designer.cs">
       <DependentUpon>JobApplication.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobPoster\AddJobPosterDetails.aspx.cs">
+    <Compile Include="AddJobPosterDetails.aspx.cs">
       <DependentUpon>AddJobPosterDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobPoster\AddJobPosterDetails.aspx.designer.cs">
+    <Compile Include="AddJobPosterDetails.aspx.designer.cs">
       <DependentUpon>AddJobPosterDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
@@ -239,39 +239,39 @@
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobPoster\JobPoster.aspx.cs">
+    <Compile Include="JobPoster.aspx.cs">
       <DependentUpon>JobPoster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobPoster\JobPoster.aspx.designer.cs">
+    <Compile Include="JobPoster.aspx.designer.cs">
       <DependentUpon>JobPoster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobPoster\JobPosterUserDetails.aspx.cs">
+    <Compile Include="JobPosterUserDetails.aspx.cs">
       <DependentUpon>JobPosterUserDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobPoster\JobPosterUserDetails.aspx.designer.cs">
+    <Compile Include="JobPosterUserDetails.aspx.designer.cs">
       <DependentUpon>JobPosterUserDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobSeeker\AddJobSeekerDetails.aspx.cs">
+    <Compile Include="AddJobSeekerDetails.aspx.cs">
       <DependentUpon>AddJobSeekerDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobSeeker\AddJobSeekerDetails.aspx.designer.cs">
+    <Compile Include="AddJobSeekerDetails.aspx.designer.cs">
       <DependentUpon>AddJobSeekerDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobSeeker\JobSeeker.aspx.cs">
+    <Compile Include="JobSeeker.aspx.cs">
       <DependentUpon>JobSeeker.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobSeeker\JobSeeker.aspx.designer.cs">
+    <Compile Include="JobSeeker.aspx.designer.cs">
       <DependentUpon>JobSeeker.aspx</DependentUpon>
     </Compile>
-    <Compile Include="JobSeeker\JobSeekerUserDetails.aspx.cs">
+    <Compile Include="JobSeekerUserDetails.aspx.cs">
       <DependentUpon>JobSeekerUserDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="JobSeeker\JobSeekerUserDetails.aspx.designer.cs">
+    <Compile Include="JobSeekerUserDetails.aspx.designer.cs">
       <DependentUpon>JobSeekerUserDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
