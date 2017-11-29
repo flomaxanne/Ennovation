@@ -6,7 +6,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <form id="form1" runat="server">
-        <div>
+        <div style="margin-left:30px;">
             <h1><font color="olive">Job Seeker Page</font></h1>
             <p style="margin-top: 14px;">
                 <span class="glyphicon glyphicon-user">               

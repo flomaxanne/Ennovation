@@ -35,7 +35,7 @@ namespace Job_Finder_System.Admin
                             txtLastName.Text = dr["Lastname"].ToString();
                             txtUserName.Text = dr["Username"].ToString();
                             txtEmail.Text = dr["Email"].ToString();
-                            txtRole.Text = dr["Role"].ToString();
+                            ddlUserRole.SelectedValue = dr["Role"].ToString();
                         }
                         cn.Close();
                         cn.Dispose();
@@ -53,7 +53,7 @@ namespace Job_Finder_System.Admin
             using (SqlConnection cn = new SqlConnection(CT))
             {
                 string query = "Update [User]  Set Firstname='" + txtFirstName.Text + "', Lastname='" + txtLastName.Text +
-                    "', Username='" + txtUserName.Text + "', Email='" + txtEmail.Text + "', Role='" + txtRole.Text +
+                    "', Username='" + txtUserName.Text + "', Email='" + txtEmail.Text + "', Role='" + ddlUserRole.SelectedValue +
                     "' where UserID='" + txtUserID.Text + "'";
 
 

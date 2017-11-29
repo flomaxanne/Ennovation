@@ -15,7 +15,7 @@
                 <div style="padding-top: 30px;" class="panel-body">
                     <div style="display: none" id="changedetails-alert" class="alert alert-danger col-sm-12"></div>
                 
-                        
+                        <form id="form1" runat="server">
                         <div class="form-group">
                             <asp:Label class="col-sm-3 control-label" runat="server" Text="Image" />
                             <div class="col-sm-9">
@@ -80,7 +80,7 @@
                                 <input class="btn btn-success" id="Reset1" type="reset" value="Reset" style="width: 150px;" />
                             </div>
                         </div>
-                  
+                  </form>
                 </div>
             </div>
         </div>

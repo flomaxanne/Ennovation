@@ -9,7 +9,7 @@
 
 
      <div class="container">
-        <div id="changedetails" style="margin-top: 50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="changedetails" style="margin-top: 30px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">Details</div>
@@ -20,7 +20,7 @@
                         
                         <div class="form-group">
                             <asp:Label class="col-sm-3 control-label" runat="server" Text="Image" />
-                            <div class="col-sm-9">
+                            <div class="col-sm-9" style="margin-bottom:20px;">
                                 <asp:FileUpload ID="fuPosterImage" runat="server" />
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <asp:Label class="col-sm-3 control-label" runat="server" Text="Username"  />
                             <div class="col-sm-9">
-                                <asp:TextBox class="form-control" ID="txtUserName"  runat="server" ReadOnly="true" />
+                                <asp:TextBox class="form-control" ID="txtUserName"  runat="server" ReadOnly="true" style="margin-bottom:20px;" />
                             </div>
                         </div>
 

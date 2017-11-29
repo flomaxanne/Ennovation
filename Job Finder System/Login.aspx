@@ -47,16 +47,18 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPwd" ErrorMessage="Please Enter Your Password" ForeColor="Red"></asp:RequiredFieldValidator>  
                         </div>
 
-                        <div style="margin-top:10px" align="right" class="form-group">
-                            <div class="col-sm-12 controls">
-                                <asp:Button class="btn btn-success" ID="btnLogin" runat="server" Text="Login" style="width:100px;" OnClientClick="Validate()" OnClick="btnLogin_Click" />&nbsp;&nbsp; 
+                        <div style="margin-top: 10px;" class="form-group">
+                            <div style="margin-bottom: 10px;">
+                                <a href="ForgetPassword.aspx" style="font-size: 85%; margin-left:10px;">&nbsp; Forget Password?</a>
+                                <asp:Button class="btn btn-success" ID="btnLogin" runat="server" Text="Login" align="right" style="width:100px;margin-left:305px;" OnClientClick="Validate()" OnClick="btnLogin_Click" ></asp:Button>
                             </div>
                         </div>
+                                              
                         <div class="form-group">
                             <div class="col-md-12 control">
                                 <div style="border-top:1px solid#888; padding-top:15px; font-size:85%">
                                     Don't have an account!
-                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Registration.aspx">&nbsp;Register Here</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Register.aspx">&nbsp;Register Here</asp:HyperLink>
                                 </div>
                             </div>
                         </div>

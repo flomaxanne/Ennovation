@@ -20,22 +20,23 @@
     </style>
 
     <div>
-
-        <table class="style1">
+        <center>
+            <div>
+        <table class="style1" style="margin-bottom:100px;">
             <tr>
                 <td class="style2">
                     <asp:Image ID="Image1" runat="server" Height="200px" Width="300px" />
                 </td>
                 <td>
                     <table class="style1">
+                        <asp:Label ID="lblsuccess" runat="server" Visible="false" ForeColor="Green"></asp:Label>
                         <form id="form1" runat="server">
-
-
+                            
                             <asp:LinkButton ID="btnApply" runat="server" CssClass="btn btn-info pull-right"
                                 CommandArgument='<%# Eval("AdID")%>'
                                 OnClientClick="return confirm('Are you sure you want to apply for this job?')"
                                 Text="Apply" OnClick="btnApply_Click"></asp:LinkButton>
-                             <asp:Label ID="lblsuccess" runat="server" Visible="false" ForeColor="Green"></asp:Label>
+                             
                             <tr>
                                 <td>
                                     <span style="color: Black; font-weight: bold;">Company Name</span><br />
@@ -109,6 +110,8 @@
                 </td>
             </tr>
         </table>
+                </div>
+            </center>
     </div>
 
 </asp:Content>

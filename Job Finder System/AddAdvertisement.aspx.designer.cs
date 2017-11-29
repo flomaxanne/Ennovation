@@ -58,13 +58,13 @@ namespace Job_Finder_System {
         protected global::System.Web.UI.WebControls.TextBox txtSkills;
         
         /// <summary>
-        /// txtLocation control.
+        /// datetimepickerfrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocation;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepickerfrom;
         
         /// <summary>
         /// txtPay control.
@@ -76,15 +76,6 @@ namespace Job_Finder_System {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPay;
         
         /// <summary>
-        /// datetimepickerfrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepickerfrom;
-        
-        /// <summary>
         /// datetimepickerto control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,15 @@ namespace Job_Finder_System {
         protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepickerto;
         
         /// <summary>
+        /// txtLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLocation;
+        
+        /// <summary>
         /// datetimepickerdate control.
         /// </summary>
         /// <remarks>
@@ -101,6 +101,24 @@ namespace Job_Finder_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText datetimepickerdate;
+        
+        /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        
+        /// <summary>
+        /// txtContact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContact;
         
         /// <summary>
         /// txtUserName control.

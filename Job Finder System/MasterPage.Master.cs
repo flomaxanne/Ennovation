@@ -22,16 +22,17 @@ namespace Job_Finder_System
                 {
                     loginmenu.Visible = false;
                     registrationmenu.Visible = false;
-                   
-                    
-                }
+                    jobsapplied.Visible = false;
+
+
+            }
 
 
             if (Session["Role"] == null)
             {
                 addadvertisement.Visible = false;
                 jobsapplied.Visible = false;
-
+                editusers.Visible = false;
             }
 
             else if (Session["Role"].ToString()=="Poster")
@@ -40,6 +41,7 @@ namespace Job_Finder_System
                 jobseeker_userdetails.Visible = false;
                 addadvertisement.Visible = true;
                 jobsapplied.Visible = false;
+                editusers.Visible = false;
             }
              else if (Session["Role"].ToString()=="Seeker")
                 {
@@ -47,6 +49,7 @@ namespace Job_Finder_System
                     jobposter_userdetails.Visible = false;
                    addadvertisement.Visible = false;
                 jobsapplied.Visible = true;
+                editusers.Visible = false;
             }
 
             if (Session["Username"] != null)

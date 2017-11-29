@@ -83,7 +83,7 @@ namespace Job_Finder_System
 
                         if (SeekerDetailsExist > 0)
                         {
-                            Response.Redirect("JobSeeker.aspx");
+                            Response.Redirect("Home.aspx");
                         }
                         else
                         {
@@ -93,7 +93,7 @@ namespace Job_Finder_System
                 }
                 else
                 {
-                    lb1.Text = "Invalid User Name or Password! Please try again!";
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Your credentials in incorrect!')", true);
                 }
 
                 

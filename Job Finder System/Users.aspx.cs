@@ -48,7 +48,7 @@ namespace Job_Finder_System.Admin
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "delete from [User] where UserID=@UserID";
-            cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = lnkRemove.CommandArgument;
+            cmd.Parameters.Add("@UserID", SqlDbType.VarChar).Value = lnkRemove.CommandArgument;
             UserGridView.DataSource = GetData(cmd);
             BindGrid();
         }

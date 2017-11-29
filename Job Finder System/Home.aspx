@@ -39,7 +39,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 
         <div class="input-group add-on" style="width: 300px; margin-left: 966px;">
-            <asp:TextBox ID="txtSearch" class="form-control" placeholder="Search" name="srch-term" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtSearch" class="form-control" placeholder="Search Skills" name="srch-term" runat="server"></asp:TextBox>
             <div class="input-group-btn">
                 <asp:Button class="btn btn-success" Text="Search" runat="server" OnClick="Search" />
             </div>
@@ -69,54 +69,25 @@
                             <td>
                                 <tr>
                                     <td style="color: black; text-align: center;">
-                                        <h4><%#Eval("Title") %></h4>
+                                        <b><p><%#Eval("Title") %></p></b>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="color: black; text-align: center;">
-                                        <h4><%#Eval("CompanyName") %></h4>
+                                        <p><%#Eval("CompanyName") %></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="color: black; text-align: center;">
-                                        <h4><%#Eval("Location") %></h4>
+                                        <p><%#Eval("SkillsRequired") %></p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <h4><%#Eval("Pay") %></h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <h4><%#Eval("SkillsRequired") %></h4>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <p><%#Eval("TimeFrom") %></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <p><%#Eval("TimeTo") %></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <p><%#Eval("DateDetails") %></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="color: black; text-align: center;">
-                                        <p><%#Eval("Username") %></p>
-                                    </td>
-                                </tr>
+
                             </td>
                         </tr>
                     </table>
-                  <asp:LinkButton ID="LinkButton1" class="btn btn-primary" runat="server" Font-Underline="False" style="margin-left: 210px; margin-top: 20px; margin-bottom: 3px;" 
-                        CommandName="ViewDetails" CommandArgument='<%#Eval("AdID") %>'>View</asp:LinkButton>
+                  <asp:LinkButton ID="LinkButton1" class="btn btn-primary" runat="server" Font-Underline="False" style="margin-left: 170px; margin-top: 20px; margin-bottom: 5px;" 
+                        CommandName="ViewDetails" CommandArgument='<%#Eval("AdID") %>'>View More</asp:LinkButton>
 
                 </div>
                 </div>

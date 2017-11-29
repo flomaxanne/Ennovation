@@ -55,9 +55,16 @@
             <label for="skillsrequired">Skills Required</label>
             <asp:TextBox class="form-control" ID="txtSkills" runat="server" Width="500px"></asp:TextBox>
         </div>
+        
         <div class="col-md-6 form-group">
-            <label for="location">Location</label>
-            <asp:TextBox class="form-control" ID="txtLocation" runat="server" Width="500px"></asp:TextBox>
+            <label for="timefrom">Time Work Start</label>
+            <div class="input-group date">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+                <input type="text" class="form-control" id="datetimepickerfrom" runat="server" clientidmode="static" style="width: 460px;" />
+            </div>
+
         </div>
         <div class="col-md-6 form-group">
             <label for="pay">Pay</label>
@@ -68,18 +75,7 @@
 
         </div>
         <div class="col-md-6 form-group">
-            <label for="timefrom">Time From</label>
-            <div class="input-group date">
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-time"></span>
-                </span>
-                <input type="text" class="form-control" id="datetimepickerfrom" runat="server" clientidmode="static" style="width: 460px;" />
-            </div>
-
-        </div>
-
-        <div class="col-md-6 form-group">
-            <label for="timeto">Time To</label>
+            <label for="timeto">Time Work End</label>
             <div class="input-group date">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-time"></span>
@@ -88,7 +84,11 @@
             </div>
 
         </div>
-
+        <div class="col-md-6 form-group">
+            <label for="location">Location</label>
+            <asp:TextBox class="form-control" ID="txtLocation" runat="server" Width="500px"></asp:TextBox>
+        </div>
+        
         <div class="col-md-6 form-group">
             <label for="datedetails">Date Details</label>
             <div class="input-group date">
@@ -99,9 +99,16 @@
                 <input type="text" class="form-control" id="datetimepickerdate" runat="server" clientidmode="static" style="width: 460px;" />
             </div>
         </div>
+        <div class="col-md-6 form-group">
+            <Label for="ContactNo">Contact No.</Label>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Invalid Contact number!" ControlToValidate="txtContact" ForeColor="Red" ValidationExpression="^([0-9\(\)\/\+ \-]*)$"></asp:RegularExpressionValidator>
+            <div>
+                <asp:TextBox class="form-control" ID="txtContact" runat="server" TextMode="Phone" style="width:500px;" />
+            </div>
+        </div>
 
         <div class="col-md-6 form-group">
-            <asp:Label runat="server" Text="Username" />
+            <Label for="Username">Username</Label>
             <asp:TextBox class="form-control" ID="txtUserName" runat="server" ReadOnly="true" style="width:500px;" />
         </div>
 
@@ -128,7 +135,7 @@
                         <asp:Label ID="lblAdID" runat="server" Text='<%#Eval("AdID") %>' Visible="true"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Title" ItemStyle-Width="10%">
+                <asp:TemplateField HeaderText="Title" ItemStyle-Width="20%">
                     <ItemTemplate>
                         <asp:Label ID="lblTitle" runat="server" Text='<%#Eval("Title") %>'></asp:Label>
                     </ItemTemplate>
@@ -153,12 +160,12 @@
                         <asp:Label ID="lblSkills" runat="server" Text='<%#Eval("SkillsRequired") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Time From" ItemStyle-Width="8%">
+                <asp:TemplateField HeaderText="Time From" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
                         <asp:Label ID="lblTimefrom" runat="server" Text='<%#Eval("TimeFrom") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Time To" ItemStyle-Width="8%">
+                <asp:TemplateField HeaderText="Time To" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
                         <asp:Label ID="lblTimeto" runat="server" Text='<%#Eval("TimeTo") %>'></asp:Label>
                     </ItemTemplate>
@@ -168,8 +175,11 @@
                         <asp:Label ID="lblDatedetails" runat="server" Text='<%#Eval("DateDetails") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-              
-
+                <asp:TemplateField HeaderText="Contact" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
+                    <ItemTemplate>
+                        <asp:Label ID="lblContact" runat="server" Text='<%#Eval("ContactNo") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Username" ItemStyle-Width="8%">
                     <ItemTemplate>
                         <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("Username") %>'></asp:Label>
@@ -180,7 +190,7 @@
                         <img src='<%#Eval("Image") %>' style="width: 120px; height: 120px;" alt="Image" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Action" ItemStyle-Width="20%">
+                <asp:TemplateField HeaderText="Action" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
                         <asp:Button class="btn btn-primary" ID="btnEdit" runat="server" Text="Edit" OnClick="btnEdit_Click" />
                         <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete this query?');"

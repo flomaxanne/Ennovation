@@ -72,6 +72,7 @@ namespace Job_Finder_System
                 datetimepickerfrom.Value = "";
                 datetimepickerto.Value = "";
                 datetimepickerdate.Value = "";
+                txtContact.Text = "";
                 txtUserName.Text = "";
                 hidAdID.Value = "";
                 btnSave.Visible = true;
@@ -93,7 +94,7 @@ namespace Job_Finder_System
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "insert into Advertisement (Title,CompanyName,SkillsRequired,Location,Pay,TimeFrom,TimeTo,DateDetails,Username,Image) values (@Title,@CompanyName,@SkillsRequired,@Location,@Pay,@TimeFrom,@TimeTo,@DateDetails,@Username,@Image)";
+                cmd.CommandText = "insert into Advertisement (Title,CompanyName,SkillsRequired,Location,Pay,TimeFrom,TimeTo,DateDetails,ContactNo,Username,Image) values (@Title,@CompanyName,@SkillsRequired,@Location,@Pay,@TimeFrom,@TimeTo,@DateDetails,@ContactNo,@Username,@Image)";
                 cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
                 cmd.Parameters.AddWithValue("@CompanyName", txtCompany.Text);
                 cmd.Parameters.AddWithValue("@SkillsRequired", txtSkills.Text);
@@ -102,6 +103,7 @@ namespace Job_Finder_System
                 cmd.Parameters.AddWithValue("@TimeFrom", datetimepickerfrom.Value);
                 cmd.Parameters.AddWithValue("@TimeTo", datetimepickerto.Value);
                 cmd.Parameters.AddWithValue("@DateDetails", datetimepickerdate.Value);
+                cmd.Parameters.AddWithValue("@ContactNo", txtContact.Text);
                 cmd.Parameters.AddWithValue("@Username", txtUserName.Text);
 
                 if (FileUpload.HasFile)
@@ -164,6 +166,7 @@ namespace Job_Finder_System
                 datetimepickerfrom.Value = (grow.FindControl("lblTimefrom") as Label).Text;
                 datetimepickerto.Value = (grow.FindControl("lblTimeto") as Label).Text;
                 datetimepickerdate.Value = (grow.FindControl("lblDatedetails") as Label).Text;
+                txtContact.Text = (grow.FindControl("lblContact") as Label).Text;
                 txtUserName.Text = (grow.FindControl("lblUsername") as Label).Text;
                 btnSave.Visible = false;
                 btnUpdate.Visible = true;
@@ -183,7 +186,7 @@ namespace Job_Finder_System
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "update Advertisement set Title=@Title,CompanyName=@CompanyName,SkillsRequired=@SkillsRequired,Location=@Location,Pay=@Pay,TimeFrom=@TimeFrom,TimeTo=@TimeTo,DateDetails=@DateDetails,Username=@Username,Image=@Image where AdID=@AdID";
+                cmd.CommandText = "update Advertisement set Title=@Title,CompanyName=@CompanyName,SkillsRequired=@SkillsRequired,Location=@Location,Pay=@Pay,TimeFrom=@TimeFrom,TimeTo=@TimeTo,DateDetails=@DateDetails,ContactNo=@ContactNo,Username=@Username,Image=@Image where AdID=@AdID";
                 cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
                 cmd.Parameters.AddWithValue("@CompanyName", txtCompany.Text);
                 cmd.Parameters.AddWithValue("@SkillsRequired", txtSkills.Text);
@@ -192,6 +195,7 @@ namespace Job_Finder_System
                 cmd.Parameters.AddWithValue("@TimeFrom", datetimepickerfrom.Value);
                 cmd.Parameters.AddWithValue("@TimeTo", datetimepickerto.Value);
                 cmd.Parameters.AddWithValue("@DateDetails", datetimepickerdate.Value);
+                cmd.Parameters.AddWithValue("@ContactNo", txtContact.Text);
                 cmd.Parameters.AddWithValue("@Username", txtUserName.Text);
                 cmd.Parameters.AddWithValue("@AdID", hidAdID.Value);
                 if (FileUpload.HasFile)

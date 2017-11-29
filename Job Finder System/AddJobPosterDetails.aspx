@@ -1,18 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="AddJobPosterDetails.aspx.cs" Inherits="Job_Finder_System.JobPoster.AddJobPosterDetails" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
      <div class="container">
-        <div id="changedetails" style="margin-top: 50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="changedetails" style="margin-top: 30px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <div class="panel-title">Details</div>
                 </div>
                 <div style="padding-top: 30px;" class="panel-body">
                     <div style="display: none" id="changedetails-alert" class="alert alert-danger col-sm-12"></div>
-          
+                    <form id="form1" runat="server">
                         <div class="form-group">
                             <asp:Label class="col-sm-3 control-label" runat="server" Text="Image" />
-                            <div class="col-sm-9">
+                            <div class="col-sm-9" style="margin-bottom:20px;">
                                 <asp:FileUpload ID="fuPosterImage" runat="server" />
                             </div>
                         </div>
@@ -20,7 +24,7 @@
                         <div class="form-group">
                             <asp:Label class="col-sm-3 control-label" runat="server" Text="Username"  />
                             <div class="col-sm-9">
-                                <asp:TextBox class="form-control" ID="txtUserName"  runat="server" ReadOnly="true" />
+                                <asp:TextBox class="form-control" ID="txtUserName"  runat="server" ReadOnly="true" style="margin-bottom:20px;" />
                             </div>
                         </div>
 
@@ -71,7 +75,7 @@
                                 <input class="btn btn-success" id="Reset1" type="reset" value="Reset" style="width: 150px;" />
                             </div>
                         </div>
-                  
+                  </form>
                 </div>
             </div>
         </div>

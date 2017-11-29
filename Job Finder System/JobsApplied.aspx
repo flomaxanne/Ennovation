@@ -12,17 +12,11 @@
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
     
-    <title></title>
-     <form id="form1" runat="server">
-    <style type="text/css">
-        .auto-style2 {
-            width: 162px;
-        }
-        .auto-style3 {
-            width: 151px;
-        }
-    </style>
-
+  
+     <div>
+        <h2 style="margin-left: 30px; margin-top: 55px;"><b>Job Applied</b></h2>
+        <hr style="margin-left: 30px; margin-right: 30px;" />
+        <form id="form1" runat="server" style="margin-left: 30px; margin-right: 30px;margin-top: 20px;">
     <asp:ScriptManager ID="ScriptManager" runat="server" EnablePageMethods="true"></asp:ScriptManager>
 
         <asp:GridView ID="gvAd" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
@@ -34,61 +28,57 @@
                         <asp:Label ID="lblID" runat="server" Text='<%#Eval("ID") %>' Visible="true"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>              
-                <asp:TemplateField HeaderText="Company Name" ItemStyle-Width="15%">
+                <asp:TemplateField HeaderText="Company Name" ItemStyle-Width="10%">
                     <ItemTemplate>
                         <asp:Label ID="lblCompany" runat="server" Text='<%#Eval("CompanyName") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Title" ItemStyle-Width="15%">
+                <asp:TemplateField HeaderText="Title" ItemStyle-Width="10%">
                     <ItemTemplate>
-                        <asp:Label ID="lblLocation" runat="server" Text='<%#Eval("Title") %>'></asp:Label>
+                        <asp:Label ID="lblTitle" runat="server" Text='<%#Eval("Title") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>  
+                        
                 
-             
-                
-                 <asp:TemplateField HeaderText="Image" ItemStyle-Width="8%">
+                 <asp:TemplateField HeaderText="Image" ItemStyle-Width="6%">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("Image") %>'></asp:Label>
+                        <asp:Label ID="lblImage" runat="server" Text='<%#Eval("Image") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                 <asp:TemplateField HeaderText="Location" ItemStyle-Width="8%">
+                 <asp:TemplateField HeaderText="Location" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("Location") %>'></asp:Label>
+                        <asp:Label ID="lblLocation" runat="server" Text='<%#Eval("Location") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                 <asp:TemplateField HeaderText="Pay" ItemStyle-Width="8%">
+                 <asp:TemplateField HeaderText="Pay" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("Pay") %>'></asp:Label>
+                        <asp:Label ID="lblPay" runat="server" Text='<%#Eval("Pay") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                
-                
+               
                             
-                <asp:TemplateField HeaderText="Time From " ItemStyle-Width="8%">
+                <asp:TemplateField HeaderText="Time From " ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("TimeFrom") %>'></asp:Label>
+                        <asp:Label ID="lblTimeFrom" runat="server" Text='<%#Eval("TimeFrom") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                 <asp:TemplateField HeaderText="Time To" ItemStyle-Width="8%">
+                 <asp:TemplateField HeaderText="Time To" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("TimeTo") %>'></asp:Label>
+                        <asp:Label ID="lblTimeTo" runat="server" Text='<%#Eval("TimeTo") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-                 <asp:TemplateField HeaderText="Date" ItemStyle-Width="8%">
+                 <asp:TemplateField HeaderText="Date" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
-                        <asp:Label ID="lblUsername" runat="server" Text='<%#Eval("DateDetails") %>'></asp:Label>
+                        <asp:Label ID="lblDate" runat="server" Text='<%#Eval("DateDetails") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 
-             
-
-             
-                <asp:TemplateField HeaderText="Action" ItemStyle-Width="20%">
+  
+                <asp:TemplateField HeaderText="Action" ItemStyle-Wrap="false" HeaderStyle-Wrap="false">
                     <ItemTemplate>
                         <asp:Button class="btn btn-danger" ID="btnDelete" runat="server" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete this query?');"
                             OnClick="btnDelete_Click" />
@@ -101,4 +91,5 @@
             <input type="hidden" runat="server" id="hidAdID" />
         
          </form>
+         </div>
 </asp:Content>

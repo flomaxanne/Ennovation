@@ -47,13 +47,15 @@ namespace Job_Finder_System
 
         protected void BindDataList()
         {
-            SqlDataAdapter adp = new SqlDataAdapter();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             try
             {
-                adp = new SqlDataAdapter("BindAdRecords_Sp", con);
-                adp.SelectCommand.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "Select * from Advertisement";
+                cmd.Connection = con;
                 adp.Fill(dt);
+
                 if (dt.Rows.Count > 0)
                 {
                     dtlAd.DataSource = dt;
@@ -90,9 +92,9 @@ namespace Job_Finder_System
             {
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM Advertisement WHERE Title LIKE '%' + @Title + '%'";
+                    cmd.CommandText = "SELECT * FROM Advertisement WHERE SkillsRequired LIKE '%' + @SkillsRequired + '%'";
                     cmd.Connection = con;
-                    cmd.Parameters.AddWithValue("@Title", txtSearch.Text.Trim());
+                    cmd.Parameters.AddWithValue("@SkillsRequired", txtSearch.Text.Trim());
                     DataTable dt = new DataTable();
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                     {
@@ -113,7 +115,7 @@ namespace Job_Finder_System
                 conn.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.CommandText = "select Title from Advertisement where " + "Title like @SearchText + '%'";
+                    cmd.CommandText = "select SkillsRequired from Advertisement where " + "SkillsRequired like @SearchText + '%'";
                     cmd.Parameters.AddWithValue("@SearchText", prefixText);
                     cmd.Connection = conn;
                     conn.Open();
@@ -122,7 +124,7 @@ namespace Job_Finder_System
                     {
                         while (sdr.Read())
                         {
-                            Ad.Add(sdr["Title"].ToString());
+                            Ad.Add(sdr["SkillsRequired"].ToString());
                         }
                     }
                     conn.Close();
